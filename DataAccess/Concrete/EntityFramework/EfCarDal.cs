@@ -9,6 +9,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
+
 namespace DataAccess.Concrete.EntityFramework
 {
     public class EfCarDal : EfEntityRepositoryBase<Car, ReCapProjectcontext>, ICarDal
@@ -25,9 +26,11 @@ namespace DataAccess.Concrete.EntityFramework
                              select new CarDetailDto
                              {
                                  CarId = c.CarId,
-                                 BrandId = b.BrandId,
-                                 ColorId = cr.ColorId,
-                                 DailyPrice = c.DailyPrice
+                                 BrandName = b.BrandName,
+                                 ColorName = cr.ColorName,
+                                 DailyPrice = c.DailyPrice,
+                                 CarName = c.Description
+                                 
                              };
 
                 return result.ToList();
